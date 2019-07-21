@@ -11,10 +11,19 @@ describe('ChatNavbar', () => {
       id: '1',
       name: 'Foo Bar',
       picture: 'https://localhost:4000/picture.jpg',
+      messages: [
+        {
+          id: '',
+          content: '',
+          createdAt: 123
+        }
+      ]
     };
 
+    const history = createMemoryHistory();
+
     {
-      const { container, getByTestId } = render(<ChatNavbar chat={chat} />);
+      const { container, getByTestId } = render(<ChatNavbar chat={chat} history={history} />);
 
       expect(getByTestId('chat-name')).toHaveTextContent('Foo Bar');
       expect(getByTestId('chat-picture')).toHaveAttribute(
@@ -29,6 +38,13 @@ describe('ChatNavbar', () => {
       id: '1',
       name: 'Foo Bar',
       picture: 'https://localhost:4000/picture.jpg',
+      messages: [
+        {
+          id: '',
+          content: '',
+          createdAt: 123
+        }
+      ]
     };
 
     const history = createMemoryHistory();

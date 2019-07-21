@@ -36,8 +36,10 @@ describe('ChatsList', () => {
       })
     );
 
+    const history = createBrowserHistory();
+
     {
-      const { container, getByTestId } = render(<ChatsList />);
+      const { container, getByTestId } = render(<ChatsList history={history} />);
 
       await waitForDomChange({ container });
 
