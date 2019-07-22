@@ -17,7 +17,7 @@ describe('ChatsList', () => {
   });
 
   it('renders fetched chats data', async () => {
-    fetch.mockResponseOnce(
+    fetchMock.mockResponseOnce(
       JSON.stringify({
         data: {
           chats: [
@@ -52,7 +52,7 @@ describe('ChatsList', () => {
   });
 
   it('should navigate to the target chat room on chat item click', async () => {
-    fetch.mockResponseOnce(
+    fetchMock.mockResponseOnce(
       JSON.stringify({
         data: {
           chats: [
