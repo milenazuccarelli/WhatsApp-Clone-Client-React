@@ -8,7 +8,7 @@ import {
   waitForDomChange,
 } from '@testing-library/react';
 import ChatsList from './ChatsList';
-import { createBrowserHistory } from 'history';
+import { createBrowserHistory, createMemoryHistory } from 'history';
 
 describe('ChatsList', () => {
   afterEach(() => {
@@ -36,8 +36,10 @@ describe('ChatsList', () => {
       })
     );
 
+    const history = createMemoryHistory();
+    
     {
-      const { container, getByTestId } = render(<ChatsList />);
+      const { container, getByTestId } = render(<ChatsList history={history} />);
 
       await waitForDomChange({ container });
 

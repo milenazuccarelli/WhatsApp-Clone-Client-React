@@ -10,11 +10,13 @@ describe('ChatNavbar', () => {
     const chat = {
       id: '1',
       name: 'Foo Bar',
-      picture: 'https://localhost:4000/picture.jpg',
+      picture: 'https://localhost:4000/picture.jpg'
     };
 
+    const history = createMemoryHistory();
+
     {
-      const { container, getByTestId } = render(<ChatNavbar chat={chat} />);
+      const { container, getByTestId } = render(<ChatNavbar chat={chat} history={history} />);
 
       expect(getByTestId('chat-name')).toHaveTextContent('Foo Bar');
       expect(getByTestId('chat-picture')).toHaveAttribute(
