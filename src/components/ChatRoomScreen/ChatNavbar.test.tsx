@@ -6,11 +6,20 @@ import ChatNavbar from './ChatNavbar';
 describe('ChatNavbar', () => {
   afterEach(cleanup);
 
+  const time = new Date('1 Jan 2019 GMT');
+
   it('renders chat data', () => {
     const chat = {
       id: '1',
       name: 'Foo Bar',
-      picture: 'https://localhost:4000/picture.jpg'
+      picture: 'https://localhost:4000/picture.jpg',
+      messages: [
+        {
+          id: '',
+          content: '',
+          createdAt: time
+        }
+      ]
     };
 
     const history = createMemoryHistory();
@@ -31,6 +40,13 @@ describe('ChatNavbar', () => {
       id: '1',
       name: 'Foo Bar',
       picture: 'https://localhost:4000/picture.jpg',
+      messages: [
+        {
+          id: '',
+          content: '',
+          createdAt: time
+        }
+      ]
     };
 
     const history = createMemoryHistory();
