@@ -36,7 +36,7 @@ interface ChatRoomScreenParams {
 export interface ChatQueryMessage {
   id: string;
   content: string;
-  createdAt: number;
+  createdAt: Date;
 }
 
 export interface ChatQueryResult {
@@ -77,7 +77,7 @@ const ChatRoomScreen: React.FC<ChatRoomScreenParams> = ({
 
       const message = {
         id: (chat.messages.length + 10).toString(),
-        createdAt: Date.now(),
+        createdAt: new Date(),
         content,
       };
 
